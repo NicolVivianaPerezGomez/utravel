@@ -1,0 +1,23 @@
+<header>
+  <section class="header-container">
+    <!-- Logo -->
+    <a routerLink="/home"><img src="purple-logo.png" alt="Utravel" class="logo"></a>
+
+    <!-- Icono hamburguesa para móviles -->
+    <div class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Menú -->
+    <nav [class.active]="menuOpen" class="header-list">
+      <a routerLink="/home">Inicio</a>
+      <a routerLink="#">Ciudades</a>
+      <a routerLink="#">Sobre Nosotros</a>
+      <a routerLink="#">Servicios</a>
+      <a routerLink="/frec-questions">Q&A</a>
+    </nav>
+    <a routerLink="/login"><img src="user-icon-purple.webp" alt="user-login" class="user-icon"></a>
+  </section>
+</header>

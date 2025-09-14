@@ -1,0 +1,46 @@
+<main>
+  <!-- Migas de pan -->
+  <section class="migas-de-pan">
+    <a routerLink="/home">Inicio</a>
+    <span class="separator">›</span>
+    <a routerLink="/login">Iniciar Sesión</a>
+  </section>
+
+  <!-- Contenedor de dos columnas -->
+
+  <div class="secciones-container">
+    <!-- Columna izquierda -->
+    <section class="login-secction">
+      <form class="formulario-login">
+        <h1>Iniciar Sesión</h1>
+
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingrese su nombre de usuario" />
+
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" placeholder="Ingrese su contraseña" />
+
+        <button type="submit" class="action-btn">Entrar</button>
+
+        <div class="otra-cuenta">
+          <p>¿Aún no tienes una cuenta?</p>
+          <a routerLink="/register">Registrarse</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Columna derecha -->
+    <section class="info-secction">
+      
+      <article class="img-conteiner">
+        <img src="/white-logo.png" alt="Utravel-logo">
+      </article>
+      
+      <h2>Bienvenido a Utravel</h2>
+      <p>
+        Explora nuevas ciudades, descubre experiencias únicas y gestiona tus
+        viajes de manera fácil y rápida con nuestra plataforma.
+      </p>
+    </section>
+  </div>
+</main>

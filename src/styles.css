@@ -1,1 +1,106 @@
-/* You can add global styles to this file, and also import other style files */
+/*color palette:
+#5E3EA4 principal
+#2DD4BF secundary
+#00514A secundary v2
+#C69C00 accent
+#111827 principal text
+#252C3B secundary text
+#F9FAFB background
+*/
+
+/*Estilos por defecto*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F9FAFB;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.action-btn{
+    background-color: #C69C00;
+    color: #111827;
+    padding: 10px;
+    border: none;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.action-btn:hover{
+    transform: scale(1.02);
+    background-color: #e2b924;
+
+}
+
+.migas-de-pan{
+    margin: 2%;
+    display: flex;
+    width: fit-content;
+    height: auto;
+    gap: 10%;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.459);
+    border-radius: 15px;
+    padding: 0.5%;
+    text-align: center;
+}
+
+.migas-de-pan {
+    display: flex;
+    flex-wrap: wrap;
+    /* permite que se acomoden en varias líneas en pantallas pequeñas */
+    align-items: center;
+    gap: 0.5rem;
+    /* espacio entre enlaces y separador */
+    font-size: 0.95rem;
+    /* tamaño de texto adaptable */
+}
+
+.migas-de-pan a {
+    text-decoration: none;
+    color: #5E3EA4;
+    font-weight: 600;
+    transition: color 0.2s ease-in, transform 0.2s ease-in;
+    white-space: nowrap;
+    /* evita que se corte en varias líneas */
+}
+
+.migas-de-pan a:hover {
+    transform: scale(1.05);
+    color: #37245f;
+}
+
+.migas-de-pan .separator {
+    color: #aaa;
+    /* color neutro para el separador */
+    user-select: none;
+    /* no seleccionable */
+}
+
+@media (max-width: 600px) {
+    .migas-de-pan {
+        font-size: 0.85rem;
+        /* reduce tamaño en pantallas pequeñas */
+        gap: 0.25rem;
+    }
+}
+

@@ -1,0 +1,117 @@
+.secciones-container {
+  background-image: url(/login-wallpaper2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 7%;
+}
+
+/* COLUMNA IZQUIERDA */
+.formulario-login {
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  flex: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.formulario-login h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.formulario-login label {
+  font-weight: bold;
+  color: #e5e5e5;
+}
+
+.formulario-login input {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #f3f3f3;
+  color: #333;
+  font-size: 1rem;
+}
+
+.formulario-login input:focus {
+  outline: none;
+  border: 2px solid #2dd4bf;
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.7);
+}
+
+.otra-cuenta {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #e5e5e5;
+}
+
+.otra-cuenta a {
+  color: #2dd4bf;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.otra-cuenta a:hover {
+  color: #1aa396;
+}
+
+/* columna derecha */
+.info-secction {
+  max-width: 450px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  backdrop-filter: blur(6px); /* efecto glass */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-secction h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-secction p {
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.info-secction img {
+    width: 8rem;
+    margin-bottom: 2%;
+}
+
+/* 📱 Responsive: columna única */
+@media (max-width: 768px) {
+  .secciones-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-secction {
+    margin-top: 2rem;
+  }
+
+  .info-secction img {
+      
+  }
+}
