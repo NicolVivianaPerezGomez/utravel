@@ -1,5 +1,6 @@
 .secciones-container {
   background-image: url(/login-wallpaper2.png);
+  background-color: #412a74;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -75,7 +76,7 @@
 .info-secction {
   max-width: 450px;
   height: 400px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(224, 224, 224, 0.144);
   padding: 2rem;
   border-radius: 12px;
   color: white;
