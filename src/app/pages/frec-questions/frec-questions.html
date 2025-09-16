@@ -1,1 +1,78 @@
-<p>frec-questions works!</p>
+<main>
+  <section class="migas-de-pan">
+    <a routerLink="/home">Inicio</a>
+    <span class="separator">›</span>
+    <a routerLink="/frec-questions">Preguntas</a>
+  </section>
+
+  <section class="questions-hero">
+    <div class="intro-text">
+      <h1>Centro de ayuda</h1>
+      <p>Encuentra la respuesta a las preguntas más frecuentes de Utravel</p>
+    </div>
+  </section>
+
+  <section class="preguntas-list-container">
+    <article class="list">
+        <ul>
+        <li><a href="#inicio-sesion" (click)="scrollToFragment('inicio-sesion', $event)">¿Cómo inicio sesión?</a></li>
+        <li><a href="#como-califico" (click)="scrollToFragment('como-califico', $event)">¿Cómo se califican los lugares?</a></li>
+        <li><a href="#ubicacion-real" (click)="scrollToFragment('ubicacion-real', $event)" >¿Cómo veo la ubicación real de un lugar?</a></li>
+        <li><a href="#problemas" (click)="scrollToFragment('problemas', $event)">¿A donde me dirijo si tengo problemas?</a></li>
+      </ul>
+      <p>Selecciona la pregunta que necesitas resolver</p>
+    </article>
+
+    <article class="question-img">
+      <img src="/questions-ilustration.png" alt="questions-ilustration" />
+    </article>
+  </section>
+
+  <section class="preguntas" id="inicio-sesion">
+    <h2>¿Cómo inicio sesión?</h2>
+    <p>
+      Dirigete al icono morado el la parte superior derecha, encontraras el
+      formulario de inicio de sesión
+    </p>
+    <ul>
+      <li>Aqui: <a routerLink="/login">iniciar sesión</a></li>
+      <li>¿No tienes una cuenta?: <a routerLink="/register">Registrarse</a></li>
+      <li>Ver manual operativo: <a href="#">Ver manual</a></li>
+    </ul>
+  </section>
+
+  <section class="preguntas" id="como-califico">
+    <h2>¿Cómo se califican los lugares?</h2>
+    <p>
+      Selecciona el lugar que quieres calificar luego de visitarlo y selecciona
+      en la parte inferior encontraras el método para rankearlo.
+    </p>
+    <ul>
+      <li>Ver manual operativo: <a href="#">Ver manual</a></li>
+    </ul>
+  </section>
+
+    <section class="preguntas" id="ubicacion-real">
+    <h2>¿Cómo veo la ubicación real de un lugar?</h2>
+    <p>
+        En cada una de las páginas de lugar que elijas encontraras en el lado derecho el mapa real de la ubicación para que te guies en como llegar.
+    </p>
+    <ul>
+      <li>Ver manual operativo: <a href="#">Ver manual</a></li>
+    </ul>
+  </section>
+
+      <section class="preguntas" id="problemas">
+    <h2>¿A donde me dirijo si tengo problemas?</h2>
+    <p>
+       ¡No te preocupes!, puedes comunicarte por nosotros por diferentes medios
+    </p>
+    <ul>
+        <li>correo de ayuda: help@utravel.com</li>
+        <li>correo: help.asis@utravel.com</li>
+        <li>teléfono: 601 324 21</li>
+        <li>telefono secundario: 316 773 4521</li>
+      <li>Ver manual operativo: <a href="#">Ver manual</a></li>
+    </ul>
+  </section>
+</main>
