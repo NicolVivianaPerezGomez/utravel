@@ -1,1 +1,158 @@
-<p>place-details works!</p>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lugar Turístico</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Leaflet CSS (IMPORTANTE para que el mapa se vea bien) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <main class="card-main">
+
+      <div class="content-container">
+        <section class="migas-de-pan">
+          <a routerLink="/home">Inicio</a>
+          <span class="separator">›</span>
+          <a routerLink="#">Detalles del lugar</a>
+        </section>
+
+        <div class="page-container">
+          <section class="info-container">
+            <h1>Lugar turístico</h1>
+
+            <article class="carousel">
+              <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                  ></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      class="d-block w-100"
+                      src="test-img.webp"
+                      alt="First slide"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="test-img.webp"
+                      alt="Second slide"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="test-img.webp"
+                      alt="Third slide"
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="place-data">
+              <ul>
+                <li>Ciudad: Bogotá, Colombia</li>
+                <li class="tipo-text">Tipo de lugar: Montañas</li>
+                <li>Tipo de experiencia: Aventura y Naturaleza</li>
+              </ul>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+                ullam eos iste praesentium fuga, tempore quo veritatis quas
+                possimus impedit veniam sunt, ipsum nam aperiam fugit odio harum
+                ad voluptatem.
+              </p>
+            </article>
+          </section>
+
+          <section class="map-container">
+            <h2>Ubicación</h2>
+            <!-- Contenedor del mapa - AQUÍ SE MOSTRARÁ EL MAPA -->
+            <div
+              id="map"
+              style="height: 400px; width: 100%; border-radius: 8px"
+            ></div>
+            <div class="map-note">
+              Mapa interactivo que muestra la ubicación exacta del lugar.
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      // Inicializar el mapa
+      // COORDENADAS DE EJEMPLO: Bariloche, Argentina
+      // LUEGO REEMPLAZA ESTAS COORDENADAS CON LA BASE DE DATOS
+      var map = L.map("map").setView([-41.133, -71.31], 13);
+
+      // Añadir capa de OpenStreetMap (gratuita)
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Añadir un marcador en la ubicación del lugar
+      // REEMPLAZA ESTAS COORDENADAS CON LAS  BASE DE DATOS
+      L.marker([-41.133, -71.31])
+        .addTo(map)
+        .bindPopup("Lugar Turístico:<br>Bariloche, Argentina")
+        .openPopup();
+    </script>
+  </body>
+</html>

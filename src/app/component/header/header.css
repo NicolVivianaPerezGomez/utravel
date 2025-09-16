@@ -60,7 +60,6 @@ header {
     bottom: -5px;
     left: 0;
     background-color: #5E3EA4;
-    /* color de acento */
     transition: width 0.3s ease;
 }
 
@@ -129,7 +128,7 @@ header {
         position: absolute;
         top: 70px;
         right: 0;
-        background-color: #5E3EA4;
+        background-color: #F9FAFB;
         flex-direction: column;
         width: 200px;
         padding: 1rem;
@@ -139,7 +138,7 @@ header {
     }
 
     .header-list a{
-        color: white;
+        color: #111827;
     }
 
     .header-list.active {

@@ -11,96 +11,106 @@
 /*Estilos por defecto*/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    background-color: #F9FAFB;
-    font-family: 'Nunito', sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #f9fafb;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Modificación mínima del main global */
 main {
-    flex: 1;
+  flex: 1;
+  display: block;
+  position: relative;
 }
 
-.action-btn{
-    background-color: #C69C00;
-    color: #111827;
-    padding: 10px;
-    border: none;
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+/* Contenedores internos para diferentes layouts */
+.content-container {
+  width: 100%;
+  height: 100%;
 }
 
-.action-btn:hover{
-    transform: scale(1.02);
-    background-color: #e2b924;
-
+.flex-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
 }
 
-.migas-de-pan{
-    margin: 2%;
-    display: flex;
-    width: fit-content;
-    height: auto;
-    gap: 10%;
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.459);
-    border-radius: 15px;
-    padding: 0.5%;
-    text-align: center;
+.action-btn {
+  background-color: #e0b92a;
+  color: #111827;
+  padding: 10px;
+  border: none;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  transform: scale(1.02);
+  background-color: #f7cf3f;
 }
 
 .migas-de-pan {
-    display: flex;
-    flex-wrap: wrap;
-    /* permite que se acomoden en varias líneas en pantallas pequeñas */
-    align-items: center;
-    gap: 0.5rem;
-    /* espacio entre enlaces y separador */
-    font-size: 0.95rem;
-    /* tamaño de texto adaptable */
+  margin: 2%;
+  display: flex;
+  width: fit-content;
+  height: auto;
+  gap: 10%;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.459);
+  border-radius: 15px;
+  padding: 1.2%;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.migas-de-pan {
+  display: flex;
+  gap: 0.5rem;
+
 }
 
 .migas-de-pan a {
-    text-decoration: none;
-    color: #5E3EA4;
-    font-weight: 600;
-    transition: color 0.2s ease-in, transform 0.2s ease-in;
-    white-space: nowrap;
-    /* evita que se corte en varias líneas */
+  text-decoration: none;
+  color: #111827;
+  font-weight: 600;
+  transition: color 0.2s ease-in, transform 0.2s ease-in;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .migas-de-pan a:hover {
-    transform: scale(1.05);
-    color: #37245f;
+  transform: scale(1.05);
+  color: #37245f;
+  text-decoration: underline;
 }
 
 .migas-de-pan .separator {
-    color: #aaa;
-    /* color neutro para el separador */
-    user-select: none;
-    /* no seleccionable */
+  color: #aaa;
+  user-select: none;
 }
 
 @media (max-width: 600px) {
-    .migas-de-pan {
-        font-size: 0.85rem;
-        /* reduce tamaño en pantallas pequeñas */
-        gap: 0.25rem;
-    }
+  .migas-de-pan {
+    font-size: 0.85rem;
+    /* reduce tamaño en pantallas pequeñas */
+    gap: 0.25rem;
+  }
 }
-
