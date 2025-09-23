@@ -1,0 +1,15 @@
+<section class="botones-accesibilidad" [class.open]="menuAbierto">
+  <!-- Botón principal -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <img src="/accecibility-icon.png" alt="☀">
+  </button>
+
+  <!-- Opciones desplegables -->
+  <div class="menu-opciones">
+    <button (click)="aumentarFuente()">A+</button>
+    <button (click)="disminuirFuente()">A-</button>
+    <button class="contrast-btn" (click)="estadoContraste()">
+      <img src="/contrast-icon.png" alt="🌗">
+    </button>
+  </div>
+</section>

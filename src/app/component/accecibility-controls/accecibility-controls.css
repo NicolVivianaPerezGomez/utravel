@@ -1,0 +1,175 @@
+.botones-accesibilidad {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Botón principal */
+.menu-toggle {
+  width: 60px;
+  height: 60px;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #5E3EA4; /* principal */
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.menu-toggle:hover {
+  background-color: #3f2870; /* secundary */
+  transform: scale(1.1);
+}
+
+/* Menú desplegable */
+.menu-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Cuando el menú esté abierto */
+.botones-accesibilidad.open .menu-opciones {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* Estilo de botones */
+.menu-opciones button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #141b2b; /* principal text */
+  color: #F9FAFB; /* background */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.menu-opciones button:hover {
+  background-color: #00514A; /* secundary v2 */
+  transform: translateX(-3px);
+}
+
+/* Icono contraste */
+.contrast-btn img {
+  width: clamp(20px, 3vw, 35px);
+}
+
+.menu-toggle img{
+    width: clamp(20px, 3vw, 35px);
+}
+
+.botones-accesibilidad {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Botón principal */
+.menu-toggle {
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #5E3EA4; /* principal */
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.menu-toggle:hover {
+  background-color: #3f2870; /* secundary */
+  transform: scale(1.1);
+}
+
+/* Menú desplegable */
+.menu-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Cuando el menú esté abierto */
+.botones-accesibilidad.open .menu-opciones {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* Estilo de botones */
+.menu-opciones button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #141b2b; /* principal text */
+  color: #F9FAFB; /* background */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.menu-opciones button:hover {
+  background-color: #00514A; /* secundary v2 */
+  transform: translateX(-3px);
+}
+
+/* Icono contraste */
+.contrast-btn img {
+  width: clamp(20px, 3vw, 35px);
+}
+
+.menu-toggle img{
+    width: clamp(20px, 3vw, 35px);
+}
+
+.modo-contraste .menu-toggle {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.modo-contraste .menu-toggle:hover {
+  background-color: #333333 !important;
+}
+
+.modo-contraste .menu-opciones button {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.modo-contraste .menu-opciones button:hover {
+  background-color: #444444 !important;
+  transform: translateX(-3px);
+}
+
+/* Fondo del menú en contraste */
+.modo-contraste .menu-opciones {
+  background-color: #FFFFFF !important;
+  border: 2px solid #000000 !important;
+  padding: 5px;
+  border-radius: 10px;
+}
+

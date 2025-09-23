@@ -9,6 +9,13 @@
     gap: 40px;
     justify-content: center;
     align-items: stretch;
+    box-sizing: border-box;
+}
+
+.all-all-container{
+    width: 100%;
+    height: 100%;
+    background-color: white;
 }
 
 /* Columna del formulario */
@@ -94,7 +101,6 @@ input::placeholder {
     font-weight: 600;
     color: #00514A;
     font-size: 1.3rem;
-    margin-top: 10px;
 }
 
 /*boton especial del formulario*/
@@ -164,4 +170,21 @@ button:hover {
     .info-column p:last-child {
         font-size: 1.1rem;
     }
+}
+
+/* Validaciones */
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 2px solid green;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  display: block;
 }

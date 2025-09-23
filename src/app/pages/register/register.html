@@ -1,42 +1,77 @@
-<main>
-  
+<main class="register-main">
   <section class="migas-de-pan">
     <a routerLink="/home">Inicio</a>
     <span class="separator">›</span>
     <a routerLink="/login">Iniciar sesión</a>
     <span class="separator">›</span>
-    <a routerLink="/register">Registrase</a>
+    <a routerLink="/register">Registrarse</a>
   </section>
 
+  <section class="all-all-container">
   <div class="all-container">
+    <!-- FORMULARIO -->
     <section class="form-column">
       <h1>Registrarse</h1>
-      <form>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- NOMBRE -->
         <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" placeholder="Nombre y segundo nombre" />
+        <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre y segundo nombre" />
+        <span class="error" *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.invalid">
+          {{ getErrorMessage("nombre") }}
+        </span>
+
+        <!-- APELLIDO -->
         <label for="apellido">Apellido: </label>
-        <input type="text" id="apellido" placeholder="Apellido/s" />
+        <input type="text" id="apellido" formControlName="apellido" placeholder="Apellidos" />
+        <span class="error" *ngIf="registerForm.get('apellido')?.touched && registerForm.get('apellido')?.invalid">
+          {{ getErrorMessage("apellido") }}
+        </span>
+
+        <!-- EMAIL -->
         <label for="email">Email: </label>
-        <input type="text" id="email" placeholder="ej: correo@dirrecion.com" />
+        <input type="text" id="email" formControlName="email" placeholder="ej: ejemplo@gmail.com" />
+        <span class="error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          {{ getErrorMessage("email") }}
+        </span>
+
+        <!-- USUARIO -->
         <label for="usuario">Usuario: </label>
-        <input type="text" id="usuario" />
+        <input type="text" id="usuario" formControlName="usuario" placeholder="ej: usuario123" />
+        <span class="error" *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.invalid">
+          {{ getErrorMessage("usuario") }}
+        </span>
+
+        <!-- CONTRASEÑA -->
         <label for="contraseña">Contraseña: </label>
-        <input type="text" id="contraseña" />
-        <label for="confirmación-cont">Confirme contraseña</label>
-        <input type="text" id="confirmación-cont" />
-        <button>Ingresar</button>
+        <input type="password" id="contraseña" formControlName="contraseña" placeholder="la contraseña debe incluir letras y números" />
+        <span class="error" *ngIf="registerForm.get('contraseña')?.touched && registerForm.get('contraseña')?.invalid">
+          {{ getErrorMessage("contraseña") }}
+        </span>
+
+        <!-- CONFIRMACION -->
+        <label for="confirmacion-cont">Confirme contraseña</label>
+        <input type="password" id="confirmacion-cont" formControlName="confirmacion" placeholder="la contraseña debe incluir letras y números" />
+        <span
+          class="error"
+          *ngIf="registerForm.get('confirmacion')?.touched &&
+                 (registerForm.get('confirmacion')?.invalid || registerForm.hasError('passwordMismatch'))"
+        >
+          {{ getErrorMessage("confirmacion") }}
+        </span>
+
+        <button type="submit" [disabled]="registerForm.invalid">Ingresar</button>
       </form>
     </section>
 
+    <!-- INFO -->
     <section class="info-column">
       <img src="/log-in-icon.webp" alt="log-in-icon" />
       <p>
-        Explora el mundo a tu manera: cada viaje es una nueva oportunidad para
-        descubrir, reír, aprender y crear recuerdos únicos. Aquí las
-        experiencias no son de catálogo, son tuyas, porque tú decides cómo
-        vivirlas y cómo hacerlas parte de tu historia.<
+        Explora el mundo a tu manera: cada viaje es una nueva oportunidad para descubrir, reír, aprender y crear recuerdos únicos.
       </p>
       <p>Bienvenido usuario de Utravel</p>
     </section>
   </div>
+  </section>
 </main>

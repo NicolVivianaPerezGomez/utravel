@@ -115,3 +115,243 @@ main {
     gap: 0.25rem;
   }
 }
+
+/* MODO DE CONTRASTE ----------------------------- */
+
+.modo-contraste {
+  background-color: #111827 !important; /* principal text → fondo oscuro */
+  color: #FFFFFF !important; /* texto claro sobre fondo oscuro */
+}
+
+.modo-contraste * {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+}
+
+/* Botón principal */
+.modo-contraste .menu-toggle {
+  background-color: #5E3EA4 !important; /* principal */
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.modo-contraste .menu-toggle:hover {
+  background-color: #2DD4BF !important; /* secundary */
+  color: #000000 !important;
+}
+
+/* Menú desplegable */
+.modo-contraste .menu-opciones {
+  background-color: #111827 !important; /* fondo muy oscuro */
+  border: 2px solid #FFFFFF !important;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.modo-contraste .menu-opciones button {
+  background-color: #00514A !important; /* secundary v2 */
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.modo-contraste .menu-opciones button:hover {
+  background-color: #C69C00 !important; /* accent */
+  color: #000000 !important; /* contraste fuerte */
+}
+
+/* Imágenes o iconos */
+.modo-contraste img {
+  filter: invert(1) contrast(150%);
+}
+
+.modo-contraste .hero{
+  filter: contrast(150%) brightness(80%);
+  color: #000000 !important;
+}
+
+.modo-contraste .hero-content{
+  color: #000000 !important;
+}
+
+.modo-contraste .hero-content h1{
+  color: #000000 !important;
+}
+
+.hero p{
+  color: black !important;
+}
+
+.modo-contraste .action-btn{
+  background-color: #000000 !important;
+}
+
+.modo-contraste header{
+  background: rgba(0, 0, 0, 0.637) !important;
+}
+
+.modo-contraste .footer-section img {
+  filter: none !important; 
+}
+
+.modo-contraste .footer{
+  background: linear-gradient(to left, #000000, #000000, #111827) !important;
+}
+
+
+/* LOGIN MODO CONTRASTE */
+
+
+.modo-contraste .secciones-container {
+  filter: contrast(150%) brightness(80%);
+}
+
+.modo-contraste .formulario-login {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 0 10px #2DD4BF; /* ligero glow para accesibilidad */
+}
+
+.modo-contraste .formulario-login h1 {
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .formulario-login label {
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .formulario-login input {
+  background-color: #111827 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .formulario-login input:focus {
+  border-color: #2DD4BF !important;
+  box-shadow: 0 0 8px #2DD4BF !important;
+}
+
+.modo-contraste .action-btn {
+  background-color: #5E3EA4 !important; /* principal */
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.modo-contraste .action-btn:hover {
+  background-color: #2DD4BF !important; /* secundary */
+  color: #000000 !important;
+}
+
+/* “¿Aún no tienes cuenta?” */
+.modo-contraste .otra-cuenta {
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .otra-cuenta a {
+  color: #2DD4BF !important;
+}
+
+.modo-contraste .otra-cuenta a:hover {
+  color: #C69C00 !important;
+}
+
+/* Columna derecha */
+.modo-contraste .info-secction {
+  background: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .info-secction h2,
+.modo-contraste .info-secction p {
+  color: #FFFFFF !important;
+}
+
+/* Logo */
+.modo-contraste .info-secction img {
+  filter: none !important;
+}
+
+/* REGISTRASE MODO CONTRASTE */ 
+
+.modo-contraste .all-container {
+  background: #111827 !important; 
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .form-column {
+  background: #1F2937 !important; 
+  border: 2px solid #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.modo-contraste .form-column h1 {
+  color: #2DD4BF !important; 
+}
+
+.modo-contraste label {
+  color: #FFFFFF !important;
+}
+
+.modo-contraste input {
+  background-color: #111827 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+.modo-contraste input::placeholder {
+  color: #9CA3AF !important; 
+}
+
+
+.modo-contraste button {
+  background: #5E3EA4 !important; 
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.modo-contraste button:hover {
+  background: #C69C00 !important; 
+  color: #000000 !important;
+}
+
+
+.modo-contraste .info-column {
+  background: transparent !important;
+  color: #FFFFFF !important;
+}
+
+.modo-contraste .info-column p:last-child {
+  color: #2DD4BF !important;
+}
+
+/* Imagen invertida para contraste */
+.modo-contraste .info-column img {
+  filter: invert(1) contrast(200%) !important;
+}
+
+/* Validaciones en contraste */
+.modo-contraste input.ng-invalid.ng-touched {
+  border: 2px solid #C69C00 !important; /* amarillo accent para errores */
+}
+
+.modo-contraste input.ng-valid.ng-touched {
+  border: 2px solid #2DD4BF !important; /* verde agua para válido */
+}
+
+.modo-contraste .register-main{
+  background-color: #111827 !important;
+}
+
+/* PREGUNTAS FRECUENTES MODO CONTRASTE */
+
+.modo-contraste .all-container{
+  background-color: #111827;
+}
+
+.modo-contraste .questions-hero{
+  filter: contrast(150%) brightness(80%);
+}
+
+.modo-contraste .intro-text{
+  background: rgba(0, 0, 0, 0.521) !important;
+}
