@@ -28,12 +28,12 @@
 
 .hero-content h1 {
   color: #111827;
-  font-size: clamp(30px, 5vw, 45px);
+  font-size: clamp(1.875rem, 5vw, 2.8125rem);
   font-weight: 600;
 }
 
 .hero p {
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   color: #111827;
 }
 
