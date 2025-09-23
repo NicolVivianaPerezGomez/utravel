@@ -355,3 +355,19 @@ main {
 .modo-contraste .intro-text{
   background: rgba(0, 0, 0, 0.521) !important;
 }
+
+.modo-contraste .all-place-container{
+  background-color: #111827 !important;
+}
+
+.modo-contraste .page-container{
+  background-color: #111827 !important;
+}
+
+.modo-contraste .card-main{
+  background-color: #111827 !important;
+}
+
+.modo-contraste .info-container, .map-container{
+  box-shadow: 0 0 20px rgb(0, 0, 0) !important;
+}
