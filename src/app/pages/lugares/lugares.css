@@ -105,8 +105,8 @@
   background: rgba(17, 24, 39, 0.8);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* lo pegamos arriba */
-  padding-top: 8rem; /* empujamos hacia abajo */
+  align-items: flex-start; 
+  padding-top: 8rem; 
   z-index: 50;
 }
 
