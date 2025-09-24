@@ -197,6 +197,12 @@ main {
   background: linear-gradient(to left, #000000, #000000, #111827) !important;
 }
 
+/* HOME MODO CONTRASTE */ 
+.modo-contraste .cards-container-home{
+  background-color: #111827 !important;
+}
+
+
 
 /* LOGIN MODO CONTRASTE */
 
@@ -384,3 +390,5 @@ main {
 .modo-contraste .modal{
   background: rgba(0, 0, 0, 0.8) !important;
 }
+
+
