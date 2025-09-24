@@ -7,7 +7,7 @@ import { LugaresApi } from '../../services/lugares-api';
 @Component({
   selector: 'app-home',
   standalone: true, // 
-  imports: [RouterLink, CommonModule], // 
+  imports: [CommonModule], // 
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

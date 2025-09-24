@@ -2,7 +2,7 @@
   <!-- Migas de pan -->
   <section class="migas-de-pan">
     <a routerLink="/home">Inicio</a>
-    <span class="separator">›</span>
+    <span class="separator"></span>
     <a routerLink="/login">Iniciar Sesión</a>
   </section>
 
@@ -11,31 +11,44 @@
   <div class="secciones-container">
     <!-- Columna izquierda -->
     <section class="login-secction">
-      <form class="formulario-login">
-        <h1>Iniciar Sesión</h1>
+      <section class="login-secction">
+        <form class="formulario-login" (ngSubmit)="onLogin()">
+          <h1>Iniciar Sesión</h1>
 
-        <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" placeholder="Ingrese su nombre de usuario" />
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="email" [(ngModel)]="email" placeholder="Ingrese su correo" required />
 
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" placeholder="Ingrese su contraseña" />
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contraseña" [(ngModel)]="contrasena"
+            placeholder="Ingrese su contraseña" required />
 
-        <button type="submit" class="action-btn">Entrar</button>
+          <button type="submit" class="action-btn">Entrar</button>
 
-        <div class="otra-cuenta">
-          <p>¿Aún no tienes una cuenta?</p>
-          <a routerLink="/register">Registrarse</a>
-        </div>
-      </form>
+          <div *ngIf="mensajeBienvenida" style="color: green; margin-top: 10px;">
+            {{ mensajeBienvenida }}
+          </div>
+
+
+          <div class="otra-cuenta">
+            <p>¿Aún no tienes una cuenta?</p>
+            <a routerLink="/register">Registrarse</a>
+          </div>
+
+          <div *ngIf="mensajeError" style="color: red;">
+            {{ mensajeError }}
+          </div>
+        </form>
+      </section>
+
     </section>
 
     <!-- Columna derecha -->
     <section class="info-secction">
-      
+
       <article class="img-conteiner">
         <img src="/white-logo.png" alt="Utravel-logo">
       </article>
-      
+
       <h2>Bienvenido a Utravel</h2>
       <p>
         Explora nuevas ciudades, descubre experiencias únicas y gestiona tus
