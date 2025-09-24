@@ -1,8 +1,8 @@
 /*color palette:
 #5E3EA4 principal
-#2DD4BF secundary
-#00514A secundary v2
-#C69C00 accent
+#2DD4BF secundary (ocacional use) / no usar
+#00514A secundary v2 (details)
+#C69C00 accent - buttons
 #111827 principal text
 #252C3B secundary text
 #F9FAFB background
@@ -352,6 +352,8 @@ main {
   filter: contrast(150%) brightness(80%);
 }
 
+/* MODO CONTRASTE PARA PAGINA POR LUGAR */
+
 .modo-contraste .intro-text{
   background: rgba(0, 0, 0, 0.521) !important;
 }
@@ -370,4 +372,15 @@ main {
 
 .modo-contraste .info-container, .map-container{
   box-shadow: 0 0 20px rgb(0, 0, 0) !important;
+}
+
+/* MODO CONTRASTE PARA CIUDADES */
+
+.modo-contraste .modal-content{
+  background-color: #111827 !important;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.623);
+}
+
+.modo-contraste .modal{
+  background: rgba(0, 0, 0, 0.8) !important;
 }
