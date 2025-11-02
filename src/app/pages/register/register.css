@@ -1,178 +1,135 @@
+/*Contenedor principal*/
+.register-main {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+}
 
-/* Contenedor principal */
+.all-all-container {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  margin-top: 0;
+  padding-top: 40px;
+  z-index: 0;
+}
+
+/*Contenedor sub principal (Formulario e imagen)*/
 .all-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 40px;
-    justify-content: center;
-    align-items: stretch;
-    box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /*Si los elementos no caben uno al lado del otro, se bajan a la siguiente fila*/
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  position: relative;
 }
 
-.all-all-container{
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
-
-/* Columna del formulario */
+/*Formulario*/
 .form-column {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  flex: 0 0 500px;
+  min-width: 300px;
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-top: -40px;
+  z-index: 2;
+  margin-left: -100px;
 }
 
 .form-column h1 {
-    color: #00514A;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: 700;
+  color: #00514A;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: 700;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 label {
-    font-weight: 600;
-    color: #252C3B;
-    margin-bottom: 5px;
-    display: block;
+  font-weight: 600;
+  color: #252C3B;
+  margin-bottom: 5px;
+  display: block;
 }
 
+/*Inputs*/
 input {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    background-color: #f9fafb;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
 }
 
 input:focus {
-    outline: none;
-    border-color: #5E3EA4;
-    background-color: white;
-    box-shadow: 0 0 0 3px rgba(94, 62, 164, 0.1);
+  outline: none;
+  border-color: #5E3EA4;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(94, 62, 164, 0.1);
 }
 
 input::placeholder {
-    color: #9ca3af;
+  color: #9ca3af;
 }
 
-/* Columna de información */
+/* Imagen*/
 .info-column {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  overflow: visible;/*Permite que sobresalga la imagen*/
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .info-column img {
-    width: 180px;
-    height: auto;
-    margin-bottom: 30px;
+  width: 100vw;
+  height: 130%;
+  object-fit: cover;
+  object-position: center top;
+  transform: translateY(-180px);
+  transition: clip-path 0.3s ease, transform 0.3s ease;
+  clip-path: polygon(32% 0, 100% 0, 100% 100%, 42% 100%); /*Corte invertido*/
 }
 
-.info-column p {
-    font-size: 1.1rem;
-    color: #374151;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-.info-column p:last-child {
-    font-weight: 600;
-    color: #00514A;
-    font-size: 1.3rem;
-}
-
-/*boton especial del formulario*/
+/*Boton crear*/
 button {
-    background: linear-gradient(135deg, #5E3EA4 0%, #2DD4BF 100%);
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 10px;
+  background: #E0B84A;
+  color: rgb(0, 0, 0);
+  border: none;
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(94, 62, 164, 0.3);
+  transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .all-container {
-        flex-direction: column;
-        margin: 20px auto;
-        gap: 30px;
-        padding: 0 15px;
-    }
-    
-    .form-column, .info-column {
-        max-width: 100%;
-        padding: 25px;
-    }
-    
-    .form-column h1 {
-        font-size: 1.8rem;
-    }
-    
-    .info-column img {
-        width: 140px;
-    }
-    
-    .migas-de-pan {
-        padding: 12px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .form-column {
-        padding: 20px 15px;
-    }
-    
-    .form-column h1 {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
-    }
-    
-    input {
-        padding: 12px 14px;
-    }
-    
-    .info-column p {
-        font-size: 1rem;
-    }
-    
-    .info-column p:last-child {
-        font-size: 1.1rem;
-    }
-}
-
-/* Validaciones */
+/*Validaciones*/
 input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
@@ -187,4 +144,273 @@ input.ng-valid.ng-touched {
   margin-top: -5px;
   margin-bottom: 10px;
   display: block;
+}
+
+.login-text {
+  text-align: left;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #b4ffb3;
+}
+
+.login-link {
+  font-weight: 700;
+  color: #1f371f;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #1aa396;
+  text-decoration: none;
+}
+
+/*Selector tipo de usuario*/
+.title-with-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #651fff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: capitalize; /*Convierte la primera letra en mayúscula*/
+}
+
+
+.dropdown-btn .arrow {
+  font-size: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  top: 40px;
+  left: 0;
+  overflow: hidden;
+  min-width: 140px;
+}
+
+.dropdown-content button {
+  color: #333;
+  padding: 10px 16px;
+  text-align: left;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.dropdown-content button:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Parte responsiva*/
+@media (max-width: 992px) and (min-width: 601px) {
+  .all-container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .form-column {
+    flex: 0 0 50%;
+    max-width: 550px;
+    padding: 25px;
+    margin-left: 0;
+    z-index: 2;
+  }
+
+  .info-column {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .info-column img {
+    width: 100vw;
+    height: 140%;
+    object-fit: cover;
+    object-position: center top;
+    transform: translateY(-180px);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 40% 100%);
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .dropdown-btn {
+    background-color: #651fff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+    width: 100px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+  }
+
+  .dropdown-btn:hover {
+    background-color: #5a1ae0;
+    transform: translateY(-2px);
+  }
+}
+
+/*Celulares*/
+@media (max-width: 600px) {
+  .all-container {
+    flex-direction: column-reverse; /*Imagen debajo del formulario*/
+    align-items: center;
+  }
+
+  .register-main {
+    background-color: #f8f8f8;
+    padding: 2rem 1rem;
+  }
+
+  .form-column {
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+    border-radius: 12px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-column h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  form {
+    gap: 1.2rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+
+  input {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .login-text {
+    text-align: center;
+  }
+
+  .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .dropdown-content button {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .info-column {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .info-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: none;
+    transform: none;
+    border-radius: 5%;
+  }
+}
+
+/*Pantallas mas pequeñas*/
+@media (max-width: 400px) {
+  .form-column {
+    padding: 1.2rem;
+  }
+
+  .form-column h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .dropdown-btn {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .dropdown-content button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }

@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {FormBuilder,FormGroup,Validators,ReactiveFormsModule,} from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,9 +10,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './register.html',
   styleUrls: ['./register.css'],
 })
+
 export class Register {
   registerForm: FormGroup;
+  userType: string = ''; //Guarda la selección
 
+  //Constructor
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group(
       {
@@ -39,17 +37,28 @@ export class Register {
           [Validators.required, Validators.pattern(/^[A-Za-z0-9]+$/)],
         ],
         confirmacion: ['', Validators.required],
+
+        tipoUsuario: ['', Validators.required],
       },
       { validators: this.passwordMatchValidator }
     );
   }
 
+  //Metodo selección de usuario
+  selectUserType(type: string): void {
+    this.userType = type;
+    this.registerForm.patchValue({ tipoUsuario: type });
+    console.log('Tipo de usuario seleccionado:', type);
+  }
+
+  //Valida contraseña
   passwordMatchValidator(form: FormGroup) {
     const pass = form.get('contraseña')?.value;
     const confirm = form.get('confirmacion')?.value;
     return pass === confirm ? null : { passwordMismatch: true };
   }
 
+  //Metodo mensajes de error
   getErrorMessage(controlName: string): string {
     const control = this.registerForm.get(controlName);
 
@@ -84,9 +93,10 @@ export class Register {
     return '';
   }
 
+  //Metodo enviar formulario
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log('Datos correctos', this.registerForm.value);
+      console.log('Datos correctos:', this.registerForm.value);
       alert('Registro exitoso');
     } else {
       console.log('Formulario inválido');

@@ -1,0 +1,256 @@
+/*Contenedor principal*/
+.nosotros-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 50px 80px 40px;
+}
+
+
+/*Encabezado*/
+.nosotros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/*Tiyulo y botón*/
+.nosotros-left {
+  flex: 1;
+}
+
+.nosotros-left h1 {
+  font-size: 35px;
+  font-weight: 550;
+  color: #00514A;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.contact-button {
+  background: #E0B84A;
+  color: rgb(0, 0, 0);
+  border: none;
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin-top: 10px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f0cb66;
+}
+
+/*Texto descriptivo*/
+.nosotros-right {
+  flex: 1.5;
+  line-height: 1.8;
+  font-size: 15px;
+  color: #000000;
+}
+
+.nosotros-right p {
+  margin-bottom: 15px;
+}
+
+.nosotros-right .final {
+  font-style: italic;
+  color: #000000;
+  font-weight: 550;
+}
+
+/*Galeria*/
+.nosotros-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  overflow: visible; /*Permite que sobre salga*/
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollGallery 30s linear infinite;
+  overflow: visible;
+}
+
+/*Animación*/
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
+
+.gallery-card {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 300px;
+  border-radius: 14px;
+  position: relative;
+  overflow: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+/*Sobre sale la imagen*/
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  border-radius: 14px;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  transform-origin: center center;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.3);
+  filter: brightness(1);
+  z-index: 10;
+}
+
+.gallery-card:hover {
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation-play-state: paused; /*Pausa el movimiento al pasar el cursor*/
+}
+
+.nosotros-gallery:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+.nosotros-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.nosotros-right img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/*Tablets*/
+@media (max-width: 992px) and (min-width: 601px) {
+  .nosotros-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .nosotros-left h1 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .contact-button {
+    width: 180px;
+    font-size: 17px;
+  }
+
+  .nosotros-right {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .gallery-card {
+    width: 180px;
+    height: 250px;
+  }
+
+  .gallery-track {
+    animation-duration: 35s;
+  }
+}
+
+/*Celulares*/
+@media (max-width: 600px) {
+  .nosotros-section {
+    padding: 30px 20px;
+  }
+
+  .nosotros-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .nosotros-left h1 {
+    font-size: 26px;
+    margin-top: 10px;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 250px;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .nosotros-right {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .nosotros-gallery {
+    overflow: hidden;
+  }
+
+  .gallery-card {
+    width: 150px;
+    height: 200px;
+  }
+
+  .gallery-track {
+    gap: 10px;
+    animation-duration: 40s;
+  }
+}
+
+/*Pantallas mas pequeñas*/
+@media (max-width: 400px) {
+  .nosotros-left h1 {
+    font-size: 22px;
+  }
+
+  .contact-button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .nosotros-right {
+    font-size: 13px;
+  }
+
+  .gallery-card {
+    width: 130px;
+    height: 180px;
+  }
+
+  .nosotros-gallery {
+    padding: 0 10px;
+  }
+}

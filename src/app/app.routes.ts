@@ -5,6 +5,7 @@ import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { PlaceDetails } from './pages/place-details/place-details';
 import { Lugares } from './pages/lugares/lugares';
+import { Nosotros } from './pages/nosotros/nosotros';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,6 @@ export const routes: Routes = [
     { path: 'register', component: Register },
     { path: 'place-details', component: PlaceDetails },
     { path: 'lugares', component: Lugares},
+    { path: 'nosotros', component: Nosotros },
     { path: '**', redirectTo: 'home' }
-
 ];

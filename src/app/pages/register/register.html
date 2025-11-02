@@ -1,4 +1,6 @@
+<header></header>
 <main class="register-main">
+  <!--Migas de pan-->
   <section class="migas-de-pan">
     <a routerLink="/home">Inicio</a>
     <span class="separator">›</span>
@@ -7,71 +9,57 @@
     <a routerLink="/register">Registrarse</a>
   </section>
 
+  <!--Contenedor principal-->
   <section class="all-all-container">
-  <div class="all-container">
-    <!-- FORMULARIO -->
-    <section class="form-column">
-      <h1>Registrarse</h1>
+    <div class="all-container">
+      <!--Formulario-->
+      <section class="form-column">
+        <h1 class="title-with-dropdown">Registrarse<div class="dropdown">
+            <!--Selectores-->
+            <button class="dropdown-btn">{{ userType ? userType : "Tipo usuario" }}<span class="arrow">▼</span></button>
+            <div class="dropdown-content">
+              <button type="button" (click)="selectUserType('Turista')">Turista</button>
+              <button type="button" (click)="selectUserType('Empresa')">Empresa</button>
+            </div>
+          </div>
+        </h1>
+        <!--Formulario reactivo-->
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <!-- NOMBRE -->
-        <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre y segundo nombre" />
-        <span class="error" *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.invalid">
-          {{ getErrorMessage("nombre") }}
-        </span>
+          <!--Inputs-->
 
-        <!-- APELLIDO -->
-        <label for="apellido">Apellido: </label>
-        <input type="text" id="apellido" formControlName="apellido" placeholder="Apellidos" />
-        <span class="error" *ngIf="registerForm.get('apellido')?.touched && registerForm.get('apellido')?.invalid">
-          {{ getErrorMessage("apellido") }}
-        </span>
+          <label for="nombre">Nombres: </label>
+          <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre y segundo nombre"/>
+          <span class="error" *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.invalid">{{ getErrorMessage("nombre") }}</span>
 
-        <!-- EMAIL -->
-        <label for="email">Email: </label>
-        <input type="text" id="email" formControlName="email" placeholder="ej: ejemplo@gmail.com" />
-        <span class="error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
-          {{ getErrorMessage("email") }}
-        </span>
+          <label for="apellido">Apellidos: </label>
+          <input type="text" id="apellido" formControlName="apellido" placeholder="Apellidos"/>
+          <span class="error" *ngIf="registerForm.get('apellido')?.touched && registerForm.get('apellido')?.invalid">{{ getErrorMessage("apellido") }}</span>
 
-        <!-- USUARIO -->
-        <label for="usuario">Usuario: </label>
-        <input type="text" id="usuario" formControlName="usuario" placeholder="ej: usuario123" />
-        <span class="error" *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.invalid">
-          {{ getErrorMessage("usuario") }}
-        </span>
+          <label for="email">Email: </label>
+          <input type="text" id="email" formControlName="email" placeholder="ej: ejemplo@gmail.com"/>
+          <span class="error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">{{ getErrorMessage("email") }}</span>
 
-        <!-- CONTRASEÑA -->
-        <label for="contraseña">Contraseña: </label>
-        <input type="password" id="contraseña" formControlName="contraseña" placeholder="la contraseña debe incluir letras y números" />
-        <span class="error" *ngIf="registerForm.get('contraseña')?.touched && registerForm.get('contraseña')?.invalid">
-          {{ getErrorMessage("contraseña") }}
-        </span>
+          <label for="usuario">Nombre de usuario: </label>
+          <input type="text" id="usuario" formControlName="usuario" placeholder="ej: usuario123"/>
+          <span class="error" *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.invalid">{{ getErrorMessage("usuario") }}</span>
 
-        <!-- CONFIRMACION -->
-        <label for="confirmacion-cont">Confirme contraseña</label>
-        <input type="password" id="confirmacion-cont" formControlName="confirmacion" placeholder="la contraseña debe incluir letras y números" />
-        <span
-          class="error"
-          *ngIf="registerForm.get('confirmacion')?.touched &&
-                 (registerForm.get('confirmacion')?.invalid || registerForm.hasError('passwordMismatch'))"
-        >
-          {{ getErrorMessage("confirmacion") }}
-        </span>
+          <label for="contraseña">Contraseña: </label>
+          <input type="password" id="contraseña" formControlName="contraseña" placeholder="la contraseña debe incluir letras y números"/>
+          <span class="error" *ngIf="registerForm.get('contraseña')?.touched && registerForm.get('contraseña')?.invalid">{{ getErrorMessage("contraseña") }}</span>
 
-        <button type="submit" [disabled]="registerForm.invalid">Ingresar</button>
-      </form>
-    </section>
+          <label for="confirmacion-cont">Confirmación de contraseña</label>
+          <input type="password" id="confirmacion-cont" formControlName="confirmacion" placeholder="la contraseña debe incluir letras y números"/>
+          <span class="error" *ngIf="registerForm.get('confirmacion')?.touched && (registerForm.get('confirmacion')?.invalid || registerForm.hasError('passwordMismatch'))">{{ getErrorMessage("confirmacion") }}</span>
 
-    <!-- INFO -->
-    <section class="info-column">
-      <img src="/log-in-icon.webp" alt="log-in-icon" />
-      <p>
-        Explora el mundo a tu manera: cada viaje es una nueva oportunidad para descubrir, reír, aprender y crear recuerdos únicos.
-      </p>
-      <p>Bienvenido usuario de Utravel</p>
-    </section>
-  </div>
+          <!--Botón crear: Estara desactivado hasta que el formulario sea valido-->
+          <button type="submit" [disabled]="registerForm.invalid">Crear</button>
+          <p class="login-text">¿Ya tienes una cuenta?<a routerLink="/login" class="login-link">Ingresar</a></p>
+        </form>
+      </section>
+
+      <!--Imagen-->
+      <section class="info-column"><img src="/imagen-regis.png" alt="imagen de registro"/></section>
+    </div>
   </section>
 </main>
