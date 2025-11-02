@@ -1,12 +1,26 @@
 /*color palette:
-#5E3EA4 principal
-#2DD4BF secundary (ocacional use) / no usar
+#7F56D9 principal
+#623BB7 principal variaton;
 #00514A secundary v2 (details)
-#C69C00 accent - buttons
+#E0B84A accent - buttons
 #111827 principal text
 #252C3B secundary text
 #F9FAFB background
+#FFFFFF background-2
+#dfdfdf decoration;
 */
+
+:root {
+  --principal: #7F56D9;
+  --pricipal-variaton: #623BB7;
+  --secundary: #00514A;
+  --accent: #E0B84A;
+  --text-principal: #111827;
+  --text-secundary: #252C3B;
+  --background: #F9FAFB;
+  --white: #FFFFFF;
+  --gray-decoration: #D9D8D9;
+}
 
 /*Estilos por defecto*/
 
@@ -50,7 +64,7 @@ main {
 }
 
 .action-btn {
-  background-color: #e0b92a;
+  background-color: var(--accent);
   color: #111827;
   padding: 10px;
   border: none;
@@ -59,6 +73,7 @@ main {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .action-btn:hover {
@@ -195,6 +210,10 @@ main {
 
 .modo-contraste .footer{
   background: linear-gradient(to left, #000000, #000000, #111827) !important;
+}
+
+.modo-contraste .turism-intro {
+  background: linear-gradient(#000000c0, #000000), url("/main-page/data-img.jpg") !important;
 }
 
 /* HOME MODO CONTRASTE */ 

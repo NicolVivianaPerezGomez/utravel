@@ -2,22 +2,60 @@
   <!--hero-->
   <section class="hero">
     <article class="hero-content">
-      <h1>Bienvenido a Utravel</h1>
-      <p>Tu próxima aventura, elegida por cómo te hace sentir.</p>
+      <h1> ✈︎ ¡Bienvenido a Utravel!</h1>
+      <p>
+        Tu próxima aventura, <br />
+        elegida por como te hace sentir.
+      </p>
       <div class="button-container">
         <a href="/login" class="action-btn">Ingresar</a>
       </div>
     </article>
   </section>
 
-  <section class="cards-container-home">
-
-    <!-- Home intro -->
+  <!-- INTRO DE CARDS DE ACCIONES  -->
+  <section class="action-cards">
     <article class="intro">
-      <h1>Lugares Turísticos</h1>
-      <p>explora los lugares más visitados de Colombia</p>
+      <img src="/main-page/suitcase-icon.webp" alt="suitcase-icon">
+      <h3>¿Qué puedes hacer?</h3>
     </article>
 
+    <div class="intro-cards-container">
+      <article class="intro-card">
+        <img src="/main-page/places-card.webp" alt="intro-card-1" />
+        <h4>Encuentra lugares en base a lo que quieres vivir</h4>
+        <p>
+          Filtra lugares turísticos según las experiencias o emociones que buscas.
+        </p>
+        <a href="">ver más</a>
+      </article>
+
+      <article class="intro-card">
+        <img src="/main-page/routes-card.webp" alt="intro-card-2" />
+        <h4>Descubre rutas culturales asombrosas</h4>
+        <p>
+          ¡Explora nuestra sección de rutas y se tu propio guía!
+        </p>
+        <a href="">ver más</a>
+      </article>
+
+      <article class="intro-card">
+        <img src="/main-page/ranking-card.webp" alt="intro-card-3" />
+        <h4>Rankea todas tus visitas con como te hicieron sentir</h4>
+        <p>
+          Califica los espacios según tu sentir y ayuda a otros usuarios a encontrar mejor sus espacios.
+        </p>
+        <a href="">ver más</a>
+      </article>
+    </div>
+  </section>
+
+   <section class="turism-intro">
+      <p><b>El turismo esta al alcance de todos, estamos comprometidos con el cuidado de la cultura y las tradiciones del mundo</b></p>
+      <a href="">Lee más aqui</a>
+  </section>
+
+  <section class="cards-container-home">
     <!-- Cards content -->
     <section class="cards-container">
       <div *ngFor="let item of data" class="card">
