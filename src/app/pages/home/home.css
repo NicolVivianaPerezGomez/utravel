@@ -1,31 +1,42 @@
 :root {
-  --principal: #7F56D9;
-  --pricipal-variaton: #623BB7;
-  --secundary: #00514A;
-  --accent: #E0B84A;
+  --principal: #7f56d9;
+  --pricipal-variaton: #623bb7;
+  --secundary: #00514a;
+  --accent: #e0b84a;
   --principal-text: #111827;
-  --text-secundar-text: #252C3B;
-  --background: #F9FAFB;
-  --white: #FFFFFF;
-  --gray-decoration: #D9D8D9;
+  --text-secundar-text: #252c3b;
+  --background: #f9fafb;
+  --white: #ffffff;
+  --gray-decoration: #d9d8d9;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  color: var(--principal-text);
+}
+
+h3 {
+  color: var(--principal-text);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 2rem);
 }
 
 /*HERO*/
 .hero {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    min-height: 400px;
-    background: #e1fffb;
-    background-image: url(/main-page/hero.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 2rem;
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 400px;
+  background: #e1fffb;
+  background-image: url(/main-page/hero.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
 }
 
 .hero-content {
@@ -36,7 +47,8 @@
   padding: 3% 5%;
 }
 
-.hero-content h1, p{
+.hero-content h1,
+p {
   font-weight: 600;
 }
 
@@ -53,35 +65,28 @@
 .button-container {
   margin-top: 0.1%;
   display: flex;
-
 }
 
 /*CARDS DE QUE PUEDES HACER*/
 
-.action-cards{
+.action-cards {
   padding: 0.5% 8% 4% 8%;
   width: 100%;
   height: auto;
 }
 
-.intro{
+.intro {
   display: flex;
   align-items: start;
   margin: 50px 15px 0 15px;
 }
 
-.intro h3{
-  color: var(--principal-text);
-  font-weight: 600;
-  font-size:  clamp(1.25rem, 2vw, 2rem);
-}
-
-.intro img{
+.intro img {
   width: 2%;
   margin-right: 10px;
 }
 
-.intro-cards-container{
+.intro-cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -89,69 +94,62 @@
   margin-top: 1%;
 }
 
-.intro-card{
-    background-color: var(--background);
-    border-radius: 15px;
-    padding: 3rem;
-    text-align: left;
-    box-sizing: border-box;
-    width: clamp(250px, 30%, 400px);
-    height: auto;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.075);
-  }
+.intro-card {
+  background-color: var(--background);
+  border-radius: 15px;
+  padding: 3rem;
+  text-align: left;
+  box-sizing: border-box;
+  width: clamp(250px, 30%, 400px);
+  height: auto;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.075);
+}
 
-.intro-card:hover{
+.intro-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.336);
 }
 
-.intro-card-light{
-  background-color: #DDDEDE;
+.intro-card-light {
+  background-color: #dddede;
 }
 
-.intro-card h4{
-  font-weight: 600;
-  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-  color: var(--principal-text);
-}
-
-.intro-card p{
+.intro-card p {
   color: var(--text-secundar-text);
-  font-size: clamp(0.93rem, 1.4vw, 1.0rem);
+  font-size: clamp(0.93rem, 1.4vw, 1rem);
   font-weight: 500;
   margin-top: 5%;
 }
 
-.intro-card a{
+.intro-card a {
   color: var(--text-secundar-text);
-  font-size: clamp(0.93rem, 1.4vw, 1.0rem);
+  font-size: clamp(0.93rem, 1.4vw, 1rem);
   text-decoration: none;
   transition: all 0.5s ease;
 }
 
-.intro-card a:hover{
+.intro-card a:hover {
   font-size: 700;
   transform: scale(1.05);
   color: var(--principal-text);
   text-decoration: underline;
 }
 
-
-.intro-card img{
+.intro-card img {
   width: 38%;
   margin-bottom: 8%;
 }
 
 /*MENSAJE DE BIENVEIDA DE TURISMO*/
 
-.turism-intro{
+.turism-intro {
   background-color: gray;
   height: auto;
   width: 100%;
-  /*margin: 5%;*/
-  background: linear-gradient(#111827a6, #252c3b), url("/main-page/data-img.jpg");
+  background: linear-gradient(#111827a6, #252c3b),
+    url("/main-page/data-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,76 +160,99 @@
   padding: 5%;
 }
 
-.turism-intro p, a{
+.turism-intro p,
+a {
   color: var(--white);
-
 }
 
-.turism-intro p{
+.turism-intro p {
   font-weight: 500;
   font-size: clamp(0.875rem, 1vw, 1.125rem);
 }
 
-.turism-intro a{
+.turism-intro a {
   font-size: clamp(0.75rem, 0.9vw, 1rem);
   transition: all 0.3s ease-in-out;
 }
 
-.turism-intro a:hover{
+.turism-intro a:hover {
   transform: scale(1.08);
   font-weight: 700;
 }
 
+/*SECCION DE MENSAJE: MI NEGOCIO */
+.mi-negocio-sections {
+  padding: 5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.negocio-blocktext {
+  line-height: 1;
+  padding: 4% 5% 5% 0;
+}
+
+.text-container-negocio p {
+  color: var(--text-secundar-text);
+  font-size: clamp(0.93rem, 1.4vw, 1rem);
+  font-weight: 500;
+}
+
+.text-container-negocio b {
+  color: #583978;
+}
+
+.img-container-negocio {
+  margin-top: 2%;
+}
+
+.img-container-negocio img {
+  width: clamp(150px, 16vw, 250px);
+  height: auto;
+}
 
 /*RESPONSIVE GENERAL*/
 @media (max-width: 480px) {
-  .hero{
+  .hero {
     background-image: url(/main-page/hero-480px.webp);
-
   }
-
 }
 
 @media (max-width: 320px) {
-  .hero{
+  .hero {
     background-image: url(/main-page/hero-320px.webp);
   }
-
 }
 
-@media(max-width: 850px){
-  .intro-card{
-    width: 80%
+@media (max-width: 850px) {
+  .intro-card {
+    width: 80%;
   }
 }
 
-@media (max-width: 767px) {
-
+@media (max-width: 782px) {
+  .img-container-negocio {
+    margin-top: 7%;
+  }
 }
-
 
 @media (max-width: 1023px) {
-
 }
-
 
 @media (max-width: 1439px) {
-
 }
-
 
 @media (min-width: 1440px) {
-
 }
-
-
 
 /* General */
 .all-container {
   padding: 2rem;
   background-color: var(--bg);
   color: var(--text-principal);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .intro-ciudades {
@@ -249,37 +270,31 @@
   color: var(--text-secundary);
 }
 
-.intro-ciudades img{
+.intro-ciudades img {
   width: clamp(25px, 2.5vw, 35px);
   height: auto;
   padding-bottom: 10px;
 }
 
 /* CONTENEDOR DE LAS CARDS */
-.cards-container-home{
+.cards-container-home {
   display: flex;
   flex-direction: column;
 }
 
-
-
-
-
-
-
 /* Cards */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 2rem; 
-  padding: 5%; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 5%;
 }
 
 .card {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
@@ -290,7 +305,7 @@
 }
 
 .card-img {
-  background: url('/default.png');
+  background: url("/default.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -340,8 +355,8 @@
   background: rgba(17, 24, 39, 0.8);
   display: flex;
   justify-content: center;
-  align-items: flex-start; 
-  padding-top: 8rem; 
+  align-items: flex-start;
+  padding-top: 8rem;
   z-index: 50;
 }
 
@@ -356,7 +371,7 @@
 }
 
 .modal-img {
-  background: url('/default.png');
+  background: url("/default.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,8 +392,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95);}
-  to { opacity: 1; transform: scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* RESPONSIVO PARA OTROS DISPOTIVIOS */
@@ -394,4 +415,3 @@
     grid-template-columns: 1fr;
   }
 }
-
