@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LugaresApi } from '../../services/lugares-api';
+import { CiudadesApi } from '../../services/ciudades-api';
 
 @Component({
   selector: 'app-home',
@@ -12,44 +13,23 @@ import { LugaresApi } from '../../services/lugares-api';
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-  data: any[] = [];
-  ciudadSeleccionada: any = null;
-  mapaUrl: SafeResourceUrl | null = null; // URL segura para el iframe
 
-  constructor(private lugares: LugaresApi, private sanitizer: DomSanitizer) {}
+  ciudades: any[] = [];
 
-  mostrarLugares1magen() {
-    this.lugares.getDATA().subscribe((data: any[]) => {
-      this.data = data.slice(0, 20).map((item) => {
-        let imageUrl = 'assets/default.png'; 
-        if (item.images && item.images.length > 0) {
-          imageUrl = item.images[0]; // si hay array, toma la primera
-        } else if (item.image) {
-          imageUrl = item.image; // si hay imagen suelta, la usa
-        }
+  constructor(private ciudadesApi: CiudadesApi) {}
 
-        return {
-          ...item,
-          image: imageUrl,
-        };
-      });
+  
+  //Listar ciudades
+  listCiudades() {
 
-      console.log(this.data);
-    });
+    this.ciudadesApi.getCiudades().subscribe(data => {
+      this.ciudades = this.ciudades;
+    })
+    
   }
 
-  abrirModal(ciudad: any) {
-    this.ciudadSeleccionada = ciudad;
-    const url = `https://www.google.com/maps?q=${ciudad.latitude},${ciudad.longitude}&hl=es&z=14&output=embed`;
-    this.mapaUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
-  cerrarModal() {
-    this.ciudadSeleccionada = null;
-    this.mapaUrl = null;
-  }
-
+  //método que renderiza
   ngOnInit(): void {
-    this.mostrarLugares1magen();
+    this.llenarCiudades()
   }
 }

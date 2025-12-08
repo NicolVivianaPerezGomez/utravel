@@ -221,10 +221,21 @@ main {
   background-color: #111827 !important;
 }
 
+.modo-contraste .action-cards {
+  background-color: #111827 !important;
+}
+
+.modo-contraste .intro-card{
+  background-color: #0e141f !important;
+}
+
+.modo-contraste .mi-negocio-sections{
+  background-color: #111827 !important;
+}
+
 
 
 /* LOGIN MODO CONTRASTE */
-
 
 .modo-contraste .secciones-container {
   filter: contrast(150%) brightness(80%);

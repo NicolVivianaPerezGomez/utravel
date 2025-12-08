@@ -145,7 +145,7 @@ p {
 /*MENSAJE DE BIENVEIDA DE TURISMO*/
 
 .turism-intro {
-  background-color: gray;
+  background-color: var(--gray-decoration);
   height: auto;
   width: 100%;
   background: linear-gradient(#111827a6, #252c3b),
@@ -213,39 +213,6 @@ a {
   height: auto;
 }
 
-/*RESPONSIVE GENERAL*/
-@media (max-width: 480px) {
-  .hero {
-    background-image: url(/main-page/hero-480px.webp);
-  }
-}
-
-@media (max-width: 320px) {
-  .hero {
-    background-image: url(/main-page/hero-320px.webp);
-  }
-}
-
-@media (max-width: 850px) {
-  .intro-card {
-    width: 80%;
-  }
-}
-
-@media (max-width: 782px) {
-  .img-container-negocio {
-    margin-top: 7%;
-  }
-}
-
-@media (max-width: 1023px) {
-}
-
-@media (max-width: 1439px) {
-}
-
-@media (min-width: 1440px) {
-}
 
 /* General */
 .all-container {

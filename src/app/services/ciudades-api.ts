@@ -2,17 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+
+//CIUDADES 
 @Injectable({
   providedIn: 'root',
 })
 export class CiudadesApi {
+  private urlApiCiudades = 'http://127.0.0.1:8000/ciudades/';
 
-  private urlApi = 'https://api-colombia.com/api/v1/City';
+  constructor(private htttp: HttpClient) {}
 
-  constructor(private htttp: HttpClient) { }
-  
-  public getDATA(): Observable<any> {
-    return this.htttp.get<any>(this.urlApi);
+  public getData(): Observable<any> {
+    return this.htttp.get<any>(this.urlApiCiudades);
   }
-  
 }

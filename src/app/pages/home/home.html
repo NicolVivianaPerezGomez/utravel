@@ -73,38 +73,5 @@
     <article class="img-container-negocio">
       <img src="/main-page/mi-negocio.png" alt="mi negocio img">
     </article>
-
-  </section>
-
-  <section class="cards-container-home">
-    <!-- Cards content -->
-    <section class="cards-container">
-      <div *ngFor="let item of data" class="card">
-        <img [src]="item.image" alt="" class="card-img" />
-        <div class="card-body">
-          <h2>{{ item.name }}</h2>
-          <p class="description">{{ item.description | slice : 0 : 100 }}...</p>
-          <button class="btn-accent" (click)="abrirModal(item)">Ver más</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal -->
-    <div class="modal" *ngIf="ciudadSeleccionada">
-      <div class="modal-content">
-        <span class="close-btn" (click)="cerrarModal()">✕</span>
-        <img [src]="ciudadSeleccionada.image" alt="" class="modal-img" />
-        <h2>{{ ciudadSeleccionada.name }}</h2>
-        <p>{{ ciudadSeleccionada.description }}</p>
-
-        <!-- Mapa -->
-        <iframe
-          *ngIf="mapaUrl"
-          [src]="mapaUrl"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
   </section>
 </main>
