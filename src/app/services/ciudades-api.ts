@@ -12,7 +12,7 @@ export class CiudadesApi {
 
   constructor(private htttp: HttpClient) {}
 
-  public getData(): Observable<any> {
+  public getCiudades(): Observable<any> {
     return this.htttp.get<any>(this.urlApiCiudades);
   }
 }

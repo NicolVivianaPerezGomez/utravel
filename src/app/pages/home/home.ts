@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { LugaresApi } from '../../services/lugares-api';
 import { CiudadesApi } from '../../services/ciudades-api';
 
 @Component({
@@ -18,18 +17,17 @@ export class Home implements OnInit {
 
   constructor(private ciudadesApi: CiudadesApi) {}
 
-  
   //Listar ciudades
   listCiudades() {
-
     this.ciudadesApi.getCiudades().subscribe(data => {
-      this.ciudades = this.ciudades;
+      this.ciudades = data;
+      console.log(this.ciudades)
     })
     
   }
 
-  //método que renderiza
+  //método que carga cuando cargue el componente
   ngOnInit(): void {
-    this.llenarCiudades()
+    this.listCiudades()
   }
 }
