@@ -145,7 +145,7 @@ p {
 /*MENSAJE DE BIENVEIDA DE TURISMO*/
 
 .turism-intro {
-  background-color: var(--gray-decoration);
+  background-color: gray;
   height: auto;
   width: 100%;
   background: linear-gradient(#111827a6, #252c3b),
@@ -213,172 +213,59 @@ a {
   height: auto;
 }
 
-
-/* General */
-.all-container {
-  padding: 2rem;
-  background-color: var(--bg);
-  color: var(--text-principal);
-  font-family: "Segoe UI", sans-serif;
-}
-
-.intro-ciudades {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.intro-ciudades h1 {
-  color: var(--principal);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.intro-ciudades p {
-  color: var(--text-secundary);
-}
-
-.intro-ciudades img {
-  width: clamp(25px, 2.5vw, 35px);
-  height: auto;
-  padding-bottom: 10px;
-}
-
-/* CONTENEDOR DE LAS CARDS */
-.cards-container-home {
+/* SECCION DE LUGARES POPULARES */
+.lugares-cards{
+  background-color: pink;
+  padding: 5% 8% 4% 11%;;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2%;
 }
 
-/* Cards */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  padding: 5%;
-}
-
-.card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* SECCION DE RUTAS */
+.rurtas-cards{
+  background-color: rgb(181, 228, 255);
+  padding: 5% 8% 4% 11%;;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease;
+  flex-wrap: wrap;
+  gap: 2%;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-}
 
-.card-img {
-  background: url("/default.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
 
-.card-body {
-  padding: 1rem;
-}
-
-.card-body h2 {
-  color: var(--principal);
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-body .description {
-  color: var(--text-secundary);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.btn-accent {
-  background-color: var(--accent);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn-accent:hover {
-  background-color: #a67f00;
-}
-
-/* Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(17, 24, 39, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 8rem;
-  z-index: 50;
-}
-
-.modal-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.modal-img {
-  background: url("/default.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--principal);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+/*RESPONSIVE GENERAL*/
+@media (max-width: 480px) {
+  .hero {
+    background-image: url(/main-page/hero-480px.webp);
   }
 }
 
-/* RESPONSIVO PARA OTROS DISPOTIVIOS */
-
-@media (max-width: 1024px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 320px) {
+  .hero {
+    background-image: url(/main-page/hero-320px.webp);
   }
 }
 
-@media (max-width: 640px) {
-  .cards-container {
-    grid-template-columns: 1fr;
+@media (max-width: 850px) {
+  .intro-card {
+    width: 80%;
   }
 }
+
+@media (max-width: 782px) {
+  .img-container-negocio {
+    margin-top: 7%;
+  }
+}
+
+@media (max-width: 1023px) {
+}
+
+@media (max-width: 1439px) {
+}
+
+@media (min-width: 1440px) {
+}
+

@@ -1,9 +1,8 @@
 <main>
-
   <!--hero-->
   <section class="hero">
     <article class="hero-content">
-      <h1> ✈︎ ¡Bienvenido a Utravel!</h1>
+      <h1>✈︎ ¡Bienvenido a Utravel!</h1>
       <p>
         Tu próxima aventura, <br />
         elegida por como te hace sentir.
@@ -17,7 +16,7 @@
   <!-- INTRO DE CARDS DE ACCIONES  -->
   <section class="action-cards">
     <article class="intro">
-      <img src="/main-page/suitcase-icon.webp" alt="suitcase-icon">
+      <img src="/main-page/suitcase-icon.webp" alt="suitcase-icon" />
       <h3>¿Qué puedes hacer?</h3>
     </article>
 
@@ -26,7 +25,8 @@
         <img src="/main-page/places-card.webp" alt="intro-card-1" />
         <h4>Encuentra lugares en base a lo que quieres vivir</h4>
         <p>
-          Filtra lugares turísticos según las experiencias o emociones que buscas.
+          Filtra lugares turísticos según las experiencias o emociones que
+          buscas.
         </p>
         <a href="">ver más</a>
       </article>
@@ -34,9 +34,7 @@
       <article class="intro-card">
         <img src="/main-page/routes-card.webp" alt="intro-card-2" />
         <h4>Descubre rutas culturales asombrosas</h4>
-        <p>
-          ¡Explora nuestra sección de rutas y se tu propio guía!
-        </p>
+        <p>¡Explora nuestra sección de rutas y se tu propio guía!</p>
         <a href="">ver más</a>
       </article>
 
@@ -44,7 +42,8 @@
         <img src="/main-page/ranking-card.webp" alt="intro-card-3" />
         <h4>Rankea todas tus visitas con como te hicieron sentir</h4>
         <p>
-          Califica los espacios según tu sentir y ayuda a otros usuarios a encontrar mejor sus espacios.
+          Califica los espacios según tu sentir y ayuda a otros usuarios a
+          encontrar mejor sus espacios.
         </p>
         <a href="">ver más</a>
       </article>
@@ -52,26 +51,73 @@
   </section>
 
   <!-- SEPARADOS MINI HERO -->
-   <section class="turism-intro">
-      <p><b>El turismo esta al alcance de todos, estamos comprometidos con el cuidado de la cultura y las tradiciones del mundo</b></p>
-      <a href="">Lee más aqui</a>
+  <section class="turism-intro">
+    <p>
+      <b
+        >El turismo esta al alcance de todos, estamos comprometidos con el
+        cuidado de la cultura y las tradiciones del mundo</b
+      >
+    </p>
+    <a href="">Lee más aqui</a>
+  </section>
+
+  <!-- SECCION DE CIUDADES DE COLOMBIA  -->
+  <section class="ciudades-colombia">
+    <ng-container *ngFor="let ciudad of ciudades">
+      <article class="ciu-card" *ngIf="ciudad.ciudad_status == 1">
+        {{ ciudad.ciu_descripcion }}
+      </article>
+    </ng-container>
+  </section>
+
+  <!-- SECCION DE LUGARES DE COLOMBIA  -->
+  <section class="lugares-cards">
+    <div class="lugares-tittle">
+      <h3>Lugares más populares</h3>
+    </div>
+
+    <div class="cards-lugares-container">
+      <!--<ng-container *ngFor="let lugar of lugares">
+        <article class="lug-card" *ngIf="lugar.lug_status == 1">
+          <img [src]="lugar.lug_imagen" [alt]="lugar.lug_imagen">
+          {{ lugar.lug_nombre }}
+        </article>
+      </ng-container>-->
+    </div>
+  </section>
+
+  <!-- SECCION DE RUTAS -->
+  <section class="rurtas-cards">
+    <div class="rutas-tittle">
+      <h3>Explora las rutas recomendadas</h3>
+    </div>
+
+    <div class="cards-rutas-container">
+      <!--<ng-container *ngFor="let ruta of rutas">
+        <article class="ruta-card" *ngIf="ruta.rut_estado == 1">
+          {{ ruta.nombre }}
+        </article>
+      </ng-container>-->
+    </div>
   </section>
 
   <!-- SECCION DE MI NEGOCIO -->
   <section class="mi-negocio-sections">
-
     <article class="text-container-negocio">
       <h3>Mi negocio</h3>
       <div class="negocio-blocktext">
         <p>¿Deseas potenciar tu negocio por medio del turismo?</p>
-        <p>Regístrate como <b>empresa</b> y comparte tus espacios con viajeros de todo el mundo.</p>
+        <p>
+          Regístrate como <b>empresa</b> y comparte tus espacios con viajeros de
+          todo el mundo.
+        </p>
         <p>¡Haz crecer tu hogar y tus oportunidades!</p>
       </div>
       <a href="/register" class="action-btn">Registrarme</a>
     </article>
 
     <article class="img-container-negocio">
-      <img src="/main-page/mi-negocio.png" alt="mi negocio img">
+      <img src="/main-page/mi-negocio.png" alt="mi negocio img" />
     </article>
   </section>
 </main>
