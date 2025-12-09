@@ -6,6 +6,8 @@ import { Register } from './pages/register/register';
 import { PlaceDetails } from './pages/place-details/place-details';
 import { Lugares } from './pages/lugares/lugares';
 import { Nosotros } from './pages/nosotros/nosotros';
+import { RutasturisticasList } from './pages/rutasturisticas/rutasturisticas';
+import { RutastturisticasCrear } from './pages/rutasturisticas/rutasturisticas-crear';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,5 +18,7 @@ export const routes: Routes = [
     { path: 'place-details', component: PlaceDetails },
     { path: 'lugares', component: Lugares},
     { path: 'nosotros', component: Nosotros },
+    { path: 'rutasturisticas', component: RutasturisticasList },
+    { path: 'rutasturisticas/crear', component: RutastturisticasCrear },
     { path: '**', redirectTo: 'home' }
 ];

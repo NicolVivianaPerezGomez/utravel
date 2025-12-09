@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Rutas Turísticas</h1>
+
+  <div class="actions-header">
+    <a routerLink="/rutasturisticas/crear" class="btn btn-success">+ Crear Nueva Ruta</a>
+  </div>
+
+  <div *ngIf="cargando" class="loading">
+    <p>Cargando rutas...</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!cargando && rutas.length === 0" class="no-data">
+    <p>No hay rutas disponibles.</p>
+  </div>
+
+  <div class="rutas-grid">
+    <div *ngFor="let ruta of rutas" class="ruta-card">
+      <!-- MOSTRAR IMAGEN -->
+      <div class="ruta-image-container">
+        <img 
+          [src]="getImageUrl(ruta)" 
+          [alt]="ruta.rut_nombre"
+          class="ruta-image"
+          onerror="this.src='assets/placeholder.png'"
+        />
+      </div>
+
+      <!-- INFORMACIÓN -->
+      <div class="ruta-info">
+        <h3>{{ ruta.rut_nombre }}</h3>
+        <p>{{ ruta.rut_descripcion }}</p>
+        <p><strong>Duración:</strong> {{ ruta.rut_duracion }}</p>
+        <p *ngIf="ruta.rut_estado === '1'" class="status-active">
+          ✓ Activa
+        </p>
+      </div>
+
+      <!-- ACCIONES -->
+      <div class="ruta-actions">
+        <button (click)="verDetalles(ruta.rut_id)" class="btn btn-primary">
+          Ver detalles
+        </button>
+        <button (click)="editarRuta(ruta.rut_id)" class="btn btn-warning">
+          Editar
+        </button>
+        <button (click)="eliminarRuta(ruta.rut_id)" class="btn btn-danger">
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
