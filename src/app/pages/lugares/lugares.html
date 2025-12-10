@@ -1,3 +1,31 @@
 <main class="all-container">
 
+  <div class="intro-ciudades">
+    <h1>Listado de Lugares</h1>
+    <p>Explora los lugares disponibles</p>
+  </div>
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let lugar of lugares">
+
+      <img [src]="lugar.imagen_url" class="card-img" alt="{{lugar.lug_nombre}}">
+
+      <div class="card-body">
+        <h2>{{ lugar.lug_nombre }}</h2>
+        <p class="description">{{ lugar.lug_descripcion }}</p>
+        <p><strong>Ubicación:</strong> {{ lugar.lug_ubicacion }}</p>
+
+        <!--Link google maps-->
+        <p>
+          <strong>Ver en Google Maps: </strong>
+          <a [href]="'https://www.google.com/maps?q=' + lugar.lug_latitud + ',' + lugar.lug_longitud" target="_blank"> Abrir mapa</a>
+        </p>
+
+        <p><strong>Categoría Lugar:</strong> {{ lugar.categoria }}</p>
+        <p><strong>Ciudad:</strong> {{ lugar.ciudad }}</p>
+      </div>
+
+    </div>
+  </div>
+
 </main>

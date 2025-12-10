@@ -40,12 +40,13 @@
 /* Cards */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 2rem; 
-  padding: 0 3rem; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 3rem;
 }
 
 .card {
+  width: 330px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -106,8 +107,8 @@
   background: rgba(17, 24, 39, 0.8);
   display: flex;
   justify-content: center;
-  align-items: flex-start; 
-  padding-top: 8rem; 
+  align-items: flex-start;
+  padding-top: 8rem;
   z-index: 50;
 }
 

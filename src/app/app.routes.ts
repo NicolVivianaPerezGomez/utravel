@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { FrecQuestions } from './pages/frec-questions/frec-questions';
-import { Login } from './pages/login/login';
+import { LoginComponent } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { PlaceDetails } from './pages/place-details/place-details';
 import { Lugares } from './pages/lugares/lugares';
@@ -13,7 +13,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: Home },
     { path: 'frec-questions', component: FrecQuestions },
-    { path: 'login', component: Login },
+    { path: 'login', component: LoginComponent },
     { path: 'register', component: Register },
     { path: 'place-details', component: PlaceDetails },
     { path: 'lugares', component: Lugares},
