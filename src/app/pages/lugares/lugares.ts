@@ -34,7 +34,7 @@ export class Lugares implements OnInit {
           lug_longitud: l.lug_longitud,
           categoria: l.categoria,
           ciudad: l.ciudad,
-          imagen_url: l.lug_imagen || 'default.jpg',
+          imagen_url: l.lug_imagen || 'assets/default.jpg',
         }));
       },
       error: (err) => console.error("Error cargando lugares:", err)
