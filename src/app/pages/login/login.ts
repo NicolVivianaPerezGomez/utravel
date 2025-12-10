@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../../services/login-service' // ruta correcta
+import { LoginService } from '../../services/login-service';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,47 +18,51 @@ export class LoginComponent {
   mensajeError: string = '';
   mensajeBienvenida: string = '';
 
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
-onLogin() {
-  const datosLogin = {
-    usu_correo: this.email,
-    usu_contraseña: this.contrasena
-  };
+  onLogin() {
+    const datosLogin = {
+      usu_correo: this.email,
+      usu_contraseña: this.contrasena
+    };
 
-  // 1️⃣ Mostrar lo que se va a enviar
-  console.log('🔹 Datos que se envían al backend:', datosLogin);
+    console.log('🔹 Datos que se envían al backend:', datosLogin);
 
-  this.loginService.login(datosLogin).subscribe({
-    next: (res: any) => {
-      // 2️⃣ Mostrar respuesta del backend
-      console.log('✅ Respuesta del backend:', res);
+    this.loginService.login(datosLogin).subscribe({
+      next: (res: any) => {
+        console.log('✅ Respuesta del backend:', res);
 
-      if (res.access && res.refresh) {
-        // 3️⃣ Guardar tokens
-        this.loginService.guardarTokens(res);
-        console.log('🔹 Tokens guardados en localStorage');
-        this.mensajeBienvenida = '¡Bienvenido!';
-        this.mensajeError = '';
-      } else {
-        console.warn('⚠️ La respuesta no contiene tokens válidos');
-        this.mensajeError = 'Respuesta inválida del backend';
+        if (res.access && res.refresh) {
+          // Guardar tokens
+          this.loginService.guardarTokens(res);
+          this.mensajeBienvenida = '¡Inicio de sesión exitoso!';
+          this.mensajeError = '';
+
+          // Redirigir a la página principal o de lugares
+          setTimeout(() => {
+            this.router.navigate(['/lugares']);
+          }, 800);
+        } else {
+          this.mensajeError = 'Respuesta inválida del backend';
+          this.mensajeBienvenida = '';
+        }
+      },
+      error: (err: any) => {
+        console.error(' Error al iniciar sesión:', err);
+
+        if (err.status === 0) {
+          this.mensajeError = 'No se puede conectar al backend (CORS o servidor apagado)';
+        } else if (err.status === 400 || err.status === 401) {
+          this.mensajeError = err.error?.error || 'Usuario o contraseña incorrectos';
+        } else {
+          this.mensajeError = 'Error inesperado';
+        }
+
+        this.mensajeBienvenida = '';
       }
-    },
-    error: (err: any) => {
-      // 4️⃣ Mostrar todo el error
-      console.error('❌ Error al iniciar sesión:', err);
-
-      if (err.status === 0) {
-        this.mensajeError = 'No se puede conectar al backend (CORS o servidor apagado)';
-      } else if (err.status === 400 || err.status === 401) {
-        this.mensajeError = err.error?.error || 'Usuario o contraseña incorrectos';
-      } else {
-        this.mensajeError = 'Error inesperado';
-      }
-
-      this.mensajeBienvenida = '';
-    }
-  });
-}
+    });
+  }
 }
