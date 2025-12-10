@@ -1,25 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface LoginResponse {
+  access: string;
+  refresh: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-
-  private apiUrl = 'http://localhost:8000/api/token/';
+  private baseUrl = 'http://localhost:8000/api/login/'; // Cambia según tu backend
 
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string) {
-    return this.http.post(this.apiUrl, { username, password });
+  // Login
+  login(datos: { usu_correo: string; usu_contraseña: string }): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(this.baseUrl, datos);
   }
 
-  saveToken(token: string) {
-    localStorage.setItem('token', token);
+  // Guardar tokens en localStorage
+  guardarTokens(tokens: LoginResponse) {
+    localStorage.setItem('access_token', tokens.access);
+    localStorage.setItem('refresh_token', tokens.refresh);
   }
 
-  getToken() {
-    return localStorage.getItem('token');
+  // Obtener token de acceso
+  getToken(): string | null {
+    return localStorage.getItem('access_token');
+  }
+
+  // Limpiar tokens
+  logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
   }
 }
 
